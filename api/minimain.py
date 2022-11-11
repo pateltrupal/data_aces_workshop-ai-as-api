@@ -59,3 +59,8 @@ def single_text_prediction(query: SingleTextQuery):
 def multiple_text_predictions(query: MultipleTextQuery):
     results = spamClassifier.predict(query.texts)
     return results
+
+@miniapp.post('/neural_config')
+def neural_config():
+    results = spamClassifier.predict(query.texts)
+    return results

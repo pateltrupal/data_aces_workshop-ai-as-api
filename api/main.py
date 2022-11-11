@@ -2,7 +2,7 @@
     main.py
         main module of the API
 """
-
+import json
 import pathlib
 import datetime
 import logging
@@ -239,3 +239,7 @@ def get_recent_calls_log(request: Request):
         formatCallerLogJSON(caller_id, called_hour),
         media_type='application/json',
     )
+@app.get('/neural_config', tags=['info'])
+def neural_config(request: Request):
+    result = spamClassifier.neural_config()
+    return json.loads(result)

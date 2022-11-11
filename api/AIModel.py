@@ -126,3 +126,8 @@ class AIModel:
             for labeledPrediction, inputText in zip(labeledPredictions, texts)
         ]
         return results
+        
+    def neural_config(self):
+        """ Neural Network of model """
+        model_json = self.model.to_json()
+        return model_json
